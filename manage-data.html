@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Policy - Anubadok Translator App</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #212529;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-top: 30px;
+        }
+        p, li {
+            font-size: 1.1em;
+            color: #495057;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .info-box {
+            background-color: #e9ecef;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .steps {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .steps li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+        .steps li:before {
+            content: counter(step);
+            counter-increment: step;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+        body { counter-reset: step; }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Data Management and Deletion for [Your App Name]</h1>
+
+        <div class="info-box">
+            <p><strong>Our Commitment to Your Privacy:</strong> At <strong>[Your App Name]</strong>, we believe in transparency. Our application provides translation services by using a webview to access third-party platforms. We do not create user accounts or store your translation history on our own servers. All data you submit is handled directly by the service you choose.</p>
+        </div>
+
+        <p>To manage or delete your data, you must go to the respective service's data management portal. Below are instructions for each service available in our app.</p>
+
+        <h2><img src="https://www.google.com/s2/favicons?domain=google.com&sz=32" alt="Google icon" style="vertical-align: middle; margin-right: 10px;">Google Translate</h2>
+        <p>Your Google Translate history may be saved to your Google Account if your "Web & App Activity" setting is enabled. You can view and delete this data by following these steps:</p>
+        <ol class="steps">
+            <li>Go to the <strong>Google My Activity</strong> page for your account:<br><a href="https://myactivity.google.com/myactivity" target="_blank" rel="noopener noreferrer">https://myactivity.google.com/myactivity</a></li>
+            <li>In the search bar at the top of the page, type <strong>"Translate"</strong> to filter for your translation history.</li>
+            <li>You can delete individual items by clicking the three-dot menu next to an item and selecting "Delete".</li>
+            <li>To delete history for a specific period, use the "Delete activity by" option in the left-hand menu.</li>
+        </ol>
+
+        <h2><img src="https://www.google.com/s2/favicons?domain=bing.com&sz=32" alt="Bing icon" style="vertical-align: middle; margin-right: 10px;">Microsoft Bing Translate</h2>
+        <p>Your translation activity on Bing is managed through the Microsoft Privacy Dashboard. Follow these steps to clear your history:</p>
+        <ol class="steps">
+            <li>Visit the <strong>Microsoft Privacy Dashboard</strong> and log in to your Microsoft Account:<br><a href="https://account.microsoft.com/privacy/activity-history" target="_blank" rel="noopener noreferrer">https://account.microsoft.com/privacy/activity-history</a></li>
+            <li>On the "Activity history" page, use the "Filter by data type" option on the right.</li>
+            <li>Select <strong>"Voice"</strong> or look for search entries related to your translations. Microsoft may bundle translation history under Search or Voice.</li>
+            <li>Click "Clear activity" for an item or "Clear all activity" for a specific data type to delete your history.</li>
+        </ol>
+
+        <h2><img src="https://www.google.com/s2/favicons?domain=bhashini.gov.in&sz=32" alt="Bhashini icon" style="vertical-align: middle; margin-right: 10px;">Anuvaad Bhashini</h2>
+        <p>Bhashini is an initiative by the Government of India. As a public service, its data handling may differ. Data submitted to Bhashini is often used to improve the accuracy of AI models for Indian languages.</p>
+        <p>While Bhashini does not currently offer a public-facing dashboard for individual data deletion like Google or Microsoft, they are bound by the data and privacy policies of the Government of India.</p>
+        <ul>
+            <li>You can review the platform's policies and terms of service on their official portal: <a href="https://bhashini.gov.in/" target="_blank" rel="noopener noreferrer">https://bhashini.gov.in/</a></li>
+            <li>For specific data-related queries, you would typically need to contact the platform operators directly through their "Contact Us" or support channels provided on their website.</li>
+        </ul>
+
+        <div class="footer">
+            <p>This page was last updated on June 15, 2025.</p>
+            <p>If you have any questions about our app's privacy practices, please contact us at <a href="mailto:[your-support-email@your-app-name.com]">[your-support-email@your-app-name.com]</a>.</p>
+        </div>
+    </div>
+
+</body>
+</html>
