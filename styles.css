@@ -1,0 +1,29 @@
+/* Add any global custom styles here */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* For better prose rendering on legal pages */
+.prose {
+    max-width: 80ch;
+}
+
+.prose h1 {
+    @apply text-3xl font-extrabold text-slate-900 dark:text-white mb-6;
+}
+
+.prose h2 {
+    @apply text-2xl font-bold text-slate-800 dark:text-white mt-8 mb-4;
+}
+
+.prose p, .prose ul, .prose li {
+    @apply text-slate-700 dark:text-slate-300;
+}
+
+.prose a {
+    @apply text-indigo-600 dark:text-indigo-400 hover:underline;
+}
+
+.prose ul {
+    @apply list-disc list-inside;
+}
