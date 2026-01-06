@@ -5,9 +5,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // For GitHub Pages deployment with custom domain
-  // basePath: '',
-  // assetPrefix: '',
+  // GitHub Pages deployment - site is hosted at /borluit/
+  basePath: '/borluit',
+  assetPrefix: '/borluit',
 };
 
 module.exports = nextConfig;
