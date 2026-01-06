@@ -1,102 +1,150 @@
 # Borluit.dev Portfolio Website
 
-This repository contains the source code for the official Borluit.dev portfolio website, designed to showcase our Android applications available on the Google Play Store.
+A high-performance, static portfolio website built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion** to showcase Android applications published on Google Play.
 
-The website is built with clean, modern HTML, and Tailwind CSS, and is fully optimized for SEO and deployment on GitHub Pages.
+## Features
 
-## ✨ Features
+- 🎨 **Modern Dark Bento Grid Design** - Inspired by Apple App Store and Linear.app
+- 🚀 **Static Export** - Deployable to GitHub Pages or Firebase Hosting
+- 📱 **Mobile-First Responsive** - Works beautifully on all devices
+- 🔍 **SEO Optimized** - Schema.org JSON-LD for AI search engines
+- ⚡ **Fast Animations** - Smooth 3D tilt effects with Framer Motion
+- 📋 **Legal Compliance** - Dynamic privacy policy pages for each app
 
--   **5 Pages:** Home, Apps, About, Contact, Privacy, and Disclaimer.
--   **Modern Design:** Clean, minimalist, and fully responsive.
--   **Dark/Light Mode:** User-toggleable theme.
--   **SEO Optimized:** Meta tags, OpenGraph, Twitter Cards, and Schema.org markup included.
--   **Contact Form:** Integrated with Formspree for easy email submissions.
--   **GitHub Pages Ready:** Optimized for easy and free hosting.
+## Project Structure
 
-## 🚀 Deployment Guide
+```
+website/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # Root layout with navigation & footer
+│   │   ├── page.tsx            # Home page with Hero & App Grid
+│   │   ├── privacy-policy/
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx    # Dynamic privacy policy pages
+│   │   ├── terms/
+│   │   │   └── page.tsx        # Terms of Service
+│   │   ├── support/
+│   │   │   └── page.tsx        # Support/Contact page
+│   │   ├── sitemap.ts          # Auto-generated sitemap
+│   │   └── robots.ts           # Robots.txt
+│   ├── components/
+│   │   ├── Navigation.tsx      # Fixed header with glassmorphism
+│   │   ├── Hero.tsx            # Animated hero section
+│   │   ├── AppCard.tsx         # 3D tilt app cards
+│   │   ├── AppGrid.tsx         # Bento grid layout
+│   │   └── Footer.tsx          # Site footer
+│   ├── data/
+│   │   └── apps-data.ts        # ⭐ EDIT THIS FILE WITH YOUR APP DATA
+│   └── lib/
+│       └── schema.ts           # Schema.org JSON-LD generators
+├── public/
+│   └── icons/                  # Place your app icons here
+├── next.config.js              # Static export configuration
+├── tailwind.config.ts          # Custom theme & animations
+└── package.json
+```
 
-Follow these steps to get your website live on GitHub Pages.
+## Getting Started
 
-### Step 1: Create a GitHub Repository
+### 1. Install Dependencies
 
-1.  Create a new public repository on GitHub. Name it `your-username.github.io` if you want the site to be at `https://your-username.github.io`. Otherwise, you can name it anything (e.g., `borluit-portfolio`), and it will be live at `https://your-username.github.io/borluit-portfolio`.
+```bash
+cd website
+npm install
+```
 
-### Step 2: Upload Files
+### 2. Update Your App Data
 
-1.  Download all the files provided (`index.html`, `apps.html`, etc.).
-2.  Create an `assets` folder and place a `favicon.ico` file inside. You can generate one from many free online tools.
-3.  Upload all the files and the `assets` folder to your new GitHub repository. Your file structure should look like this:
+Edit `src/data/apps-data.ts` with your actual app information:
 
-    ```
-    /
-    ├── index.html
-    ├── apps.html
-    ├── about.html
-    ├── contact.html
-    ├── privacy.html
-    ├── disclaimer.html
-    ├── style.css
-    ├── script.js
-    ├── sitemap.xml
-    ├── robots.txt
-    ├── README.md
-    └── /assets/
-        └── favicon.ico
-    ```
+```typescript
+export const publisherInfo = {
+  name: 'Your Publisher Name',
+  email: 'your@email.com',
+  // ...
+};
 
-### Step 3: Configure the Contact Form (Formspree)
+export const appsData: AppData[] = [
+  {
+    id: 'your-app-id',
+    slug: 'your-app-slug',  // Used in URLs: /privacy-policy/your-app-slug
+    name: 'Your App Name',
+    // ...
+  },
+];
+```
 
-1.  Go to [Formspree.io](https://formspree.io/) and create a free account.
-2.  Create a new form and point it to your email address (`kazirangaapps@gmail.com`).
-3.  Formspree will give you a unique URL endpoint. It will look something like `https://formspree.io/f/xxxxxxxx`.
-4.  Open `contact.html` and find the `<form>` tag. Replace the placeholder `action` URL with your unique Formspree URL:
+### 3. Add App Icons
 
-    ```html
-    <!-- BEFORE -->
-    <form id="contact-form" action="https://formspree.io/f/your_form_id" method="POST">
-    
-    <!-- AFTER -->
-    <form id="contact-form" action="https://formspree.io/f/xxxxxxxx" method="POST"> 
-    ```
-5.  Save the `contact.html` file and commit the change to your repository.
+Place your app icons in `public/icons/` with names matching the `iconUrl` paths in `apps-data.ts`.
 
-### Step 4: Enable GitHub Pages
+### 4. Run Development Server
 
-1.  In your GitHub repository, go to **Settings > Pages**.
-2.  Under the "Build and deployment" section, for the **Source**, select `Deploy from a branch`.
-3.  For the **Branch**, select `main` (or `master`) and keep the folder as `/ (root)`.
-4.  Click **Save**. GitHub will build and deploy your site. It might take a few minutes.
-5.  Your website will be live at the URL shown on the GitHub Pages settings screen.
+```bash
+npm run dev
+```
 
-### Step 5: Update URLs and SEO Files
+Open [http://localhost:3000](http://localhost:3000) to see your site.
 
-1.  **IMPORTANT:** Go through all `*.html` files, `sitemap.xml`, and `robots.txt` and replace every instance of `https://your-domain.com` with your actual live GitHub Pages URL (e.g., `https://your-username.github.io/borluit-portfolio`).
-2.  Commit these changes to your repository.
+### 5. Build for Production
 
-### (Optional) Step 6: Custom Domain
+```bash
+npm run build
+```
 
-1.  If you own a custom domain, you can connect it in the **Settings > Pages** section of your repository.
-2.  Follow the instructions provided by GitHub to configure your DNS records with your domain registrar.
+This generates a static site in the `out/` directory.
 
-## 📈 SEO Keywords Suggestions
+## Deployment
 
-Based on the Borluit.dev profile, here are some suggested keywords to target:
+### GitHub Pages
 
-**Primary Keywords:**
-* Borluit.dev
-* Android app developer
-* Google Play developer
+1. Push the `out/` folder contents to a `gh-pages` branch
+2. Enable GitHub Pages in repository settings
 
-**App-Specific Keywords:**
-* Any Text Widget
-* Minimalist Wallpaper app
-* All Files Document Reader
-* Custom text widget Android
-* Simple Android wallpaper
+### Firebase Hosting
 
-**General Keywords:**
-* useful android apps
-* productivity tools for android
-* best utility apps android
-* free android apps
-* clean interface apps
+1. Install Firebase CLI: `npm install -g firebase-tools`
+2. Initialize: `firebase init hosting`
+3. Set public directory to `out`
+4. Deploy: `firebase deploy`
+
+## Privacy Policy URLs
+
+Each app gets its own privacy policy page at:
+```
+https://yourdomain.com/privacy-policy/{app-slug}/
+```
+
+Paste these URLs directly into Google Play Console.
+
+## Customization
+
+### Colors
+Edit `tailwind.config.ts` to change the color palette:
+
+```typescript
+colors: {
+  background: '#0a0a0a',
+  accent: '#3b82f6',  // Change this for different accent color
+  // ...
+}
+```
+
+### Animations
+Modify Framer Motion animations in components like `Hero.tsx` and `AppCard.tsx`.
+
+## Tech Stack
+
+- [Next.js 14](https://nextjs.org/) - React framework with App Router
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
+- [Framer Motion](https://www.framer.com/motion/) - Animation library
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+
+## License
+
+MIT License - Feel free to use this for your own app portfolio!
+
+---
+
+Built with ❤️ by Borluit.dev
